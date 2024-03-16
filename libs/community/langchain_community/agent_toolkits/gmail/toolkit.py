@@ -9,6 +9,7 @@ from langchain_community.tools import BaseTool
 from langchain_community.tools.gmail.create_draft import GmailCreateDraft
 from langchain_community.tools.gmail.get_message import GmailGetMessage
 from langchain_community.tools.gmail.get_thread import GmailGetThread
+from langchain_community.tools.gmail.reply_to_thread import GmailReplyToThread
 from langchain_community.tools.gmail.search import GmailSearch
 from langchain_community.tools.gmail.send_message import GmailSendMessage
 from langchain_community.tools.gmail.utils import build_resource_service
@@ -55,4 +56,5 @@ class GmailToolkit(BaseToolkit):
             GmailSearch(api_resource=self.api_resource),
             GmailGetMessage(api_resource=self.api_resource),
             GmailGetThread(api_resource=self.api_resource),
+            GmailReplyToThread(api_resource=self.api_resource),
         ]
